@@ -6,6 +6,6 @@ class Loader
 {
     public static function config()
     {
-        return [];
+
     }
 }

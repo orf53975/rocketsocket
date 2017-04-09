@@ -2,7 +2,7 @@
 
 namespace Rocketsocket\Contracts;
 
-interface Shadowsocks
+interface Rocketsocket
 {
     /**
      * 创建账户
