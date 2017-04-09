@@ -1,0 +1,17 @@
+{
+    "name": "leong/rocketsocket",
+    "description": "Shadowsocks For WHMCS",
+    "type": "private",
+    "authors": [
+        {
+            "name": "Leongpeng Tou",
+            "email": "leongpeng.tou@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Leongpeng\\Rocketsocket\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
