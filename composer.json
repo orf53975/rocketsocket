@@ -10,8 +10,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Leongpeng\\Rocketsocket\\": "src/"
-        }
+            "Rocketsocket\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
     },
     "minimum-stability": "stable"
 }

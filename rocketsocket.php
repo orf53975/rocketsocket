@@ -1,8 +1,8 @@
 <?php
 
-use Rocketscoket\Loader;
-
 !defined('WHMCS') && die('This file cannot be accessed directly');
+
+use Rocketsocket\ModuleSetting;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -16,5 +16,5 @@ function rocketsocket_MetaData()
 
 function rocketsocket_ConfigOptions()
 {
-    return Loader::config();
+    return array_merge(ModuleSetting::config(), ModuleSetting::packages());
 }

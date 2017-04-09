@@ -6,7 +6,7 @@ use Illuminate\Support\Arr;
 
 class Config
 {
-    const DEFAULT_CONFIG_FILE = '../config.php';
+    const DEFAULT_CONFIG_FILE = __DIR__ . '/../config.php';
 
     protected $items;
 
