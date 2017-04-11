@@ -4,7 +4,7 @@ namespace Rocketsocket\Exceptions;
 
 use Exception;
 
-class RocketExcetion extends Exception
+class RocketException extends Exception
 {
     //
 }

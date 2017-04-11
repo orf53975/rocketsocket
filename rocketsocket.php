@@ -1,5 +1,8 @@
 <?php
 
+use Rocketsocket\Rocketsocket;
+use Rocketsocket\Exceptions\RocketException;
+
 !defined('WHMCS') && die('This file cannot be accessed directly');
 
 require __DIR__ . '/vendor/autoload.php';
@@ -42,7 +45,12 @@ function rocketsocket_ConfigOptions()
     ];
 }
 
+
 function rocketsocket_CreateAccount(array $parameters)
 {
-    //
+    try {
+        (new Rocketsocket($parameters))->create();
+    } catch (RocketException $e) {
+        throw new RocketException($e->getMessage(), $e->getCode());
+    }
 }

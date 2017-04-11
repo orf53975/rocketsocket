@@ -10,3 +10,8 @@ function config($key = null, $default = null)
 
     return (new Config)->get($key, $default);
 }
+
+function bandwidth_convert($number, $before, $after) 
+{
+    return $number;
+}
