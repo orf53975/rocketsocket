@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocketscoket\Repositories;
+namespace Rocketsocket\Repositories;
 
 use Rocketsocket\Models\Shadowsocks;
 

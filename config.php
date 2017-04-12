@@ -4,8 +4,8 @@ return [
     'version' => '0.0.1',
     'drivers' => [
         'shadowsocks' => [
-            'driver' => Rocketscoket\Drivers\Shadowsocks::class,
-            'repo' => Rocketscoket\Repositories\ShadowsocksRepository::class
+            'driver' => Rocketsocket\Drivers\Shadowsocks::class,
+            'repo' => Rocketsocket\Repositories\ShadowsocksRepository::class
         ]
     ]
 ];

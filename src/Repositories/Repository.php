@@ -6,13 +6,20 @@ abstract class Repository
 {
     protected $model;
 
-    protected function find(int $id, array $fields = ['*'])
+    public function find($id, array $fields = ['*'])
     {
         return $this->model->find($id, $fields);
     }
 
-    protected function create(array $data)
+    public function create(array $data)
     {
         return $this->model->create($data);
+    }
+
+    public function __call($method, $parameters) 
+    {
+        if (method_exists($this->model, $method)) {
+            return $this->model->{$method}(...$parameters);
+        }
     }
 }

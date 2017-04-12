@@ -6,51 +6,36 @@ interface Rocketsocket
 {
     /**
      * 创建账户
-     *
-     * @method create
-     * @param  mixed $parameters
      */
-    public function create($parameters);
+    public function create();
 
     /**
      * 更改密码
-     *
-     * @param  mixed $parameters
      */
-    public function changePassword(...$parameters);
+    public function changePassword();
 
     /**
      * 更改端口
-     *
-     * @param  mixed $parameters
      */
-    public function changePort(...$parameters);
+    public function changePort();
 
     /**
      * 更改流量
-     *
-     * @param  mixed $parameters
      */
-    public function changeBandwidth(...$parameters);
+    public function changeBandwidth();
 
     /**
      * 更改状态
-     *
-     * @param  mixed $parameters
      */
-    public function changeStatus(...$parameters);
+    public function changeStatus();
 
     /**
      * 转移拥有者
-     *
-     * @param  mixed $parameters
      */
-    public function transfer(...$parameters);
+    public function transfer();
 
     /**
      * 删除账号
-     *
-     * @param  mixed $parameters
      */
-    public function terminate(...$parameters);
+    public function terminate();
 }
