@@ -9,7 +9,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Rocketsocket 
 {
-    const DATABASE_CONNECTION_NAME = 'rocketsocket';
+    const CONNECTION_NAME = 'rocketsocket';
 
     protected $repo;
 
@@ -50,7 +50,7 @@ class Rocketsocket
                 'charset' => 'utf8',
                 'collation' => 'utf8_unicode_ci',
                 'prefix' => ''
-            ], $this->getServer()), self::DATABASE_CONNECTION_NAME);
+            ], $this->getServer()), self::CONNECTION_NAME);
 
         $capsule->setEventDispatcher(new Dispatcher(new Container));
         $capsule->setAsGlobal();
