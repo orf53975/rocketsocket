@@ -9,12 +9,12 @@ class ShadowsocksRRepository extends Repository
 {
     protected $fromRecycleBin = false;
 
-    protected $recycleBin;
+    protected $recycleBinRepo;
 
     public function __construct() 
     {
         $this->model = new ShadowsocksR;
-        $this->recycleBin = new RecycleRepository;
+        $this->recycleBinRepo = new RecycleRepository;
     }
 
     /**
@@ -24,22 +24,22 @@ class ShadowsocksRRepository extends Repository
      */
     protected function getAvailablePort() 
     {
-        if ($this->recycleBin->getPort()) {
+        if ($this->recycleBinRepo->getPort()) {
             $this->fromRecycleBin = true;
-            return $this->recycleBin->getPort()->port;
+            return $this->recycleBinRepo->getPort()->port;
         }
 
         $port = $this->model->latest()->first();
         if ($port) {
             $port = $port->port + 1;
-            if ($port > config('max_port')) {
+            if ($port > config('port.max')) {
                 throw new RocketException('resource exhaustion');
             }
 
             return $port;
         }
 
-        return config('min_port');
+        return config('port.min');
     }
 
     /**
@@ -62,7 +62,7 @@ class ShadowsocksRRepository extends Repository
                 'service_id' => $serviceId
             ]);
         if ($account) {
-            $this->recycleBin->delete($port);
+            $this->recycleBinRepo->delete($port);
         }
 
         return $account;
