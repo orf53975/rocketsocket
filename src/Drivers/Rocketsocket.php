@@ -61,4 +61,14 @@ class Rocketsocket
     {
         return bandwidth_convert($this->parameters['configoption3'], 'MB', 'bytes');
     }
+
+    protected function getServiceId() 
+    {
+        return $this->parameters['serviceid'];
+    }
+
+    protected function getPassword() 
+    {
+        return $this->parameters['customfileds']['password'] ?: $this->parameters['password'];
+    }
 }

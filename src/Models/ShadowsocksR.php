@@ -2,7 +2,9 @@
 
 namespace Rocketsocket\Models;
 
-class Shadowsocks extends Model 
+class ShadowsocksR extends Model 
 {
     protected $table = 'user';
+
+    protected $guarded = [];
 }
