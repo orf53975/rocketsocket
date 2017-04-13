@@ -1,5 +1,6 @@
 <?php
 
+use Rocketsocket\Response;
 use Rocketsocket\Rocketsocket;
 use Rocketsocket\Exceptions\RocketException;
 
@@ -50,6 +51,8 @@ function rocketsocket_CreateAccount(array $parameters)
 {
     try {
         (new Rocketsocket($parameters))->create();
+
+        return Response::successfully(); 
     } catch (RocketException $e) {
         throw new RocketException($e->getMessage(), $e->getCode());
     }
