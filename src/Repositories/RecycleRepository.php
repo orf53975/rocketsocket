@@ -2,13 +2,13 @@
 
 namespace Rocketsocket\Repositories;
 
-use Rocketsocket\Models\Recycle;
+use Rocketsocket\Models\RecycleBin;
 
-class RecycleRepository extends Repository 
+class RecycleBinRepository extends Repository 
 {
     public function __construct() 
     {
-        $this->model = new Recycle;
+        $this->model = new RecycleBin;
     }
 
     public function getPort() 

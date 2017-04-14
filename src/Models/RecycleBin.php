@@ -2,7 +2,7 @@
 
 namespace Rocketsocket\Models;
 
-class Recycle extends Model 
+class RecycleBin extends Model 
 {
     protected $table = 'recycle_bin';
 

@@ -14,7 +14,7 @@ class ShadowsocksRRepository extends Repository
     public function __construct() 
     {
         $this->model = new ShadowsocksR;
-        $this->recycleBinRepo = new RecycleRepository;
+        $this->recycleBinRepo = new RecycleBinRepository;
     }
 
     /**
@@ -61,7 +61,7 @@ class ShadowsocksRRepository extends Repository
                 'transfer_enable' => $bandwidth,
                 'service_id' => $serviceId
             ]);
-        if ($account) {
+        if ($account && $this->fromRecycleBin) {
             $this->recycleBinRepo->delete($port);
         }
 
