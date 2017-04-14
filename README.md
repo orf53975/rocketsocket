@@ -18,7 +18,7 @@ then:
 
 finally:
 
-    update rocketsocket files to `/app/web/whmcs/modules/servers/rocketsocket`
+    upload rocketsocket files to `/app/web/whmcs/modules/servers/rocketsocket`
 
 enjoy it.
 
