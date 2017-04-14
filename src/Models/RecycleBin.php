@@ -4,6 +4,8 @@ namespace Rocketsocket\Models;
 
 class RecycleBin extends Model 
 {
+    public $timestamps = false;
+
     protected $table = 'recycle_bin';
 
     protected $guarded = [];

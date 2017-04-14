@@ -18,6 +18,13 @@ class RecycleBinRepository extends Repository
 
     public function delete($port) 
     {
-        $this->model->ofPort($port)->delete();
+        return $this->model->ofPort($port)->delete();
+    }
+
+    public function recycle($port) 
+    {
+        return $this->model->create([
+                'port' => $port
+            ]);
     }
 }

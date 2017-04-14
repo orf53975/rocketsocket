@@ -13,26 +13,16 @@ interface Rocketsocket
      * 更改密码
      */
     public function changePassword();
-
+    
     /**
-     * 更改端口
+     * 暂停账号
      */
-    public function changePort();
-
+    public function suspend();
+    
     /**
-     * 更改流量
+     * 恢复账号
      */
-    public function changeBandwidth();
-
-    /**
-     * 更改状态
-     */
-    public function changeStatus();
-
-    /**
-     * 转移拥有者
-     */
-    public function transfer();
+    public function unsuspend();
 
     /**
      * 删除账号

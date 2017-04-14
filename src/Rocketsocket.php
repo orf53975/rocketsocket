@@ -2,6 +2,8 @@
 
 namespace Rocketsocket;
 
+use Rocketsocket\Exceptions\RocketException;
+
 class Rocketsocket 
 {
     protected $driver;
@@ -9,8 +11,11 @@ class Rocketsocket
     public function __construct(array $parameters)
     {
         $driver = config('drivers.' . $parameters['configoption1']);
-
-        $this->driver = new $driver['driver']($parameters, new $driver['repo']);
+        if (class_exists($driver['driver'])) {
+            $this->driver = new $driver['driver']($parameters, new $driver['repo']);
+        } else {
+            throw new RocketException("Drvier {$driver['driver']} Not Found.");
+        }
     }
 
     public function __call($method, $parameters) 

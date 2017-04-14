@@ -46,13 +46,56 @@ function rocketsocket_ConfigOptions()
     ];
 }
 
-
 function rocketsocket_CreateAccount(array $parameters)
 {
     try {
         (new Rocketsocket($parameters))->create();
 
-        return Response::successfully(); 
+        return Response::success();
+    } catch (RocketException $e) {
+        throw new RocketException($e->getMessage(), $e->getCode());
+    }
+}
+
+function rocketsocket_ChangePassword($parameters) 
+{
+    try {
+        (new Rocketsocket($parameters))->changePassword();
+
+        return Response::success();
+    } catch (RocketException $e) {
+        throw new RocketException($e->getMessage(), $e->getCode());
+    }
+}
+
+function rocketsocket_SuspendAccount($parameters) 
+{
+    try {
+        (new Rocketsocket($parameters))->suspend();
+
+        return Response::success();
+    } catch (RocketException $e) {
+        throw new RocketException($e->getMessage(), $e->getCode());
+    }
+}
+
+function rocketsocket_UnsuspendAccount($parameters) 
+{
+    try {
+        (new Rocketsocket($parameters))->unsuspend();
+
+        return Response::success();
+    } catch (RocketException $e) {
+        throw new RocketException($e->getMessage(), $e->getCode());
+    }
+}
+
+function rocketsocket_TerminateAccount($parameters) 
+{
+    try {
+        (new Rocketsocket($parameters))->terminate();
+
+        return Response::success();
     } catch (RocketException $e) {
         throw new RocketException($e->getMessage(), $e->getCode());
     }

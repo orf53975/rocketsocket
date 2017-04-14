@@ -11,51 +11,23 @@ class ShadowsocksR extends Rocketsocket implements RocketsocketImpl
         return $this->repo->createAccount($this->getPassword(), $this->getBandwidth(), $this->getServiceId());
     }
 
-        /**
-     * 更改密码
-     */
     public function changePassword() 
     {
-        //
+        return $this->repo->changePassword($this->getServiceId(), $this->getPassword());
     }
 
-    /**
-     * 更改端口
-     */
-    public function changePort() 
+    public function suspend() 
     {
-        //
+        return $this->repo->suspend($this->getServiceId());
     }
 
-    /**
-     * 更改流量
-     */
-    public function changeBandwidth() 
+    public function unsuspend() 
     {
-        //
+        return $this->repo->unsuspend($this->getServiceId());
     }
 
-    /**
-     * 更改状态
-     */
-    public function changeStatus() 
-    {
-        //
-    }
-
-    /**
-     * 转移拥有者
-     */
-    public function transfer() 
-    {
-        //
-    }
-
-    /**
-     * 删除账号
-     */
     public function terminate() 
     {
-        //
+        return $this->repo->terminate($this->getServiceId());
     }
 }

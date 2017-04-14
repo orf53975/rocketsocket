@@ -7,7 +7,7 @@ return [
         'max' => 65535
     ],
     'drivers' => [
-        'shadowsocks' => [
+        'shadowsocksr' => [
             'driver' => Rocketsocket\Drivers\ShadowsocksR::class,
             'repo' => Rocketsocket\Repositories\ShadowsocksRRepository::class
         ]

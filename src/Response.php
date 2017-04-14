@@ -4,8 +4,8 @@ namespace Rocketsocket;
 
 class Response 
 {
-    public static function successfully() 
+    public static function success() 
     {
-        return 'successfully';
+        return 'success';
     }
 }
