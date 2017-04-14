@@ -7,11 +7,17 @@ Shadowsocks For WHMCS Module. (Basic version.)
 # Usage
 
 first:
+
     run: `composer dump-autoload`
+
 then:
+
     create a new directory in your whmcs installation directory.
+
     example: `mkdir /app/web/whmcs/modules/servers/rocketsocket`
+
 finally:
+
     update rocketsocket files to `/app/web/whmcs/modules/servers/rocketsocket`
 
 enjoy it.
