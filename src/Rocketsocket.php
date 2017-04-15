@@ -21,7 +21,8 @@ class Rocketsocket
     public function __call($method, $parameters) 
     {
         if (method_exists($this->driver, $method)) {
-            $this->driver->{$method}(...$parameters);
+            return $this->driver->{$method}(...$parameters);
         }
+        throw new RocketException("Method {$method} Not Found.");
     }
 }

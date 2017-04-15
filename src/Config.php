@@ -6,14 +6,12 @@ use Illuminate\Support\Arr;
 
 class Config
 {
-    const DEFAULT_CONFIG_FILE = __DIR__ . '/../config.php';
-
     protected $items;
 
     public function __construct($file = null)
     {
         if (is_null($file)) {
-            $this->items = require self::DEFAULT_CONFIG_FILE;
+            $this->items = require __DIR__ . '/../config.php';
         } else {
             $this->items = require $file;
         }

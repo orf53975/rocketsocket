@@ -45,12 +45,19 @@ class Rocketsocket
     {
         $capsule = new Capsule;
 
-        $capsule->addConnection(array_merge([
+        $defaultDatabaseConfig = [
                 'driver' => 'mysql',
                 'charset' => 'utf8',
                 'collation' => 'utf8_unicode_ci',
                 'prefix' => ''
-            ], $this->getServer()), self::CONNECTION_NAME);
+            ];
+
+        $capsule->addConnection(array_merge($defaultDatabaseConfig, $this->getServer()), self::CONNECTION_NAME);
+
+        // 为什么会有这个呢？
+        // 因为我用 Model 在这里注册连接的时候会覆盖掉 WHMCS 的 Database Connection 
+        // 然后会导致 WHMCS 出错。所以咯，再给他注册一个连接
+        $capsule->addConnection(array_merge($defaultDatabaseConfig, system_db_config()), 'default');
 
         $capsule->setEventDispatcher(new Dispatcher(new Container));
         $capsule->setAsGlobal();

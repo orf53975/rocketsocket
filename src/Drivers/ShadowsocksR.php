@@ -30,4 +30,9 @@ class ShadowsocksR extends Rocketsocket implements RocketsocketImpl
     {
         return $this->repo->terminate($this->getServiceId());
     }
+
+    public function getAccount() 
+    {
+        return $this->repo->getAccountByServiceId($this->getServiceId());
+    }
 }

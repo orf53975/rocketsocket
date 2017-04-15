@@ -9,7 +9,8 @@ return [
     'drivers' => [
         'shadowsocksr' => [
             'driver' => Rocketsocket\Drivers\ShadowsocksR::class,
-            'repo' => Rocketsocket\Repositories\ShadowsocksRRepository::class
+            'repo' => Rocketsocket\Repositories\ShadowsocksRRepository::class,
+            'template' => 'templates/shadowsocksr/client.tpl'
         ]
     ]
 ];

@@ -100,3 +100,19 @@ function rocketsocket_TerminateAccount($parameters)
         throw new RocketException($e->getMessage(), $e->getCode());
     }
 }
+
+function rocketsocket_ClientArea($parameters) 
+{
+    try {
+        $account = (new Rocketsocket($parameters))->getAccount();
+        
+        return [
+            'tabOverviewReplacementTemplate' => config('drivers.' . $parameters['configoption1'] . '.template'),
+            'templateVariables' => [
+                'account' => $account->toArray()
+            ]
+        ];       
+    } catch (RocketException $e) {
+        throw new RocketException($e->getMessage(), $e->getCode());
+    }
+}
