@@ -21,28 +21,31 @@
 
         <div>
             <h4 class="dark">Usage</h4>
-            <ul class="rs-post-nested-list list-unstyled" style="text-indent: 1rem;">
-                <li class="flex no-column no-wrap">
-                    <span><i class="fa fa-link"></i></span> {$account.port}
-                </li>
-                <li class="flex no-column no-wrap">
-                    <span><i class="fa fa-circle-o"></i></span>{bandwidth_convert($account['transfer_enable'], 'bytes', 'mb')}
-                </li>
-                <li class="flex no-column no-wrap">
-                    <span><i class="fa fa-circle-o-notch"></i></span>{bandwidth_convert($account['d'] + $account['u'], 'bytes', 'mb')}
-                </li>
-                <li class="flex no-column no-wrap">
-                    <span><i class="fa fa-exchange"></i></span>{bandwidth_convert($account['transfer_enable'] - ($account['d'] + $account['u']), 'bytes', 'mb')}
-                </li>
-                <li class="flex no-column no-wrap">
-                    <span><i class="fa fa-arrow-up"></i></span>{bandwidth_convert($account['u'], 'bytes', 'mb')}
-                </li>
-                <li class="flex no-column no-wrap">
-                    <span><i class="fa fa-arrow-down"></i></span>{bandwidth_convert($account['d'], 'bytes', 'mb')}
-                </li>
-                <li class="flex no-column nowrap">
-                    {$account.method} {$account.obfs}
-                </li>
+            <ul class="list-unstyled">
+                <div class="col-md-6">
+                    <dl class="dl-horizontal">
+                        <dt style="text-align: left;">链接端口:</dt>
+                        <dd style="text-align: left;">{$account.port}</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt style="text-align: left;">{$account.port}</dt>
+                        <dd style="text-align: left;">链接端口:</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt style="text-align: left;">{$account.port}</dt>
+                        <dd style="text-align: left;">链接端口:</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt style="text-align: left;">{$account.port}</dt>
+                        <dd style="text-align: left;">链接端口:</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="dl-horizontal">
+                        <dt style="text-align: left;">dada</dt>
+                        <dd style="text-align: left;">ddd</dd>
+                    </dl>
+                </div>
             </ul> <!-- end .rs-post-nested-list -->
         </div> <!-- end .rs-post-bottom -->
     </div> <!-- end .left-side-inner -->
