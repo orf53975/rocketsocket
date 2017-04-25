@@ -12,7 +12,7 @@ CREATE TABLE `user` (
   `enable` tinyint(1) NOT NULL DEFAULT '1',
   `method` varchar(64) NOT NULL DEFAULT 'chacha20',
   `service_id` int(10) unsigned NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `service_id` (`service_id`),
